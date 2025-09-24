@@ -73,7 +73,7 @@ const Profile = ({ setSelectedTrack }) => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await fetch(`http://ec2-44-220-144-119.compute-1.amazonaws.com:8080/users/profile/${user.username}`, {
+                const response = await fetch(`http://ec2-3-80-117-194.compute-1.amazonaws.com:8080/users/profile/${user.username}`, {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }
@@ -376,7 +376,7 @@ const Profile = ({ setSelectedTrack }) => {
         }
 
         try {
-            const response = await fetch(`http://ec2-44-220-144-119.compute-1.amazonaws.com:8080/users/update/${user.username}`, {
+            const response = await fetch(`http://ec2-3-80-117-194.compute-1.amazonaws.com:8080/users/update/${user.username}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -424,7 +424,7 @@ const Profile = ({ setSelectedTrack }) => {
             formData.append('profilePicture', file);
 
             try {
-                const response = await fetch(`http://ec2-44-220-144-119.compute-1.amazonaws.com:8080/users/profile-picture/${user.username}`, {
+                const response = await fetch(`http://ec2-3-80-117-194.compute-1.amazonaws.com:8080/users/profile-picture/${user.username}`, {
                     method: 'POST',
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
